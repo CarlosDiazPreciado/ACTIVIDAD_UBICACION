@@ -10,8 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Finobacci extends AppCompatActivity implements View.OnClickListener {
+public class resta extends AppCompatActivity implements View.OnClickListener {
     EditText tex1;
+    EditText text2;
     TextView tv2;
     Button bt1, bt2;
 
@@ -22,6 +23,7 @@ public class Finobacci extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finobacci);
         tex1 = (EditText) findViewById(R.id.txt3);
+        text2 = (EditText) findViewById(R.id.texto40);
         tv2 = (TextView) findViewById(R.id.vista2);
 
         bt1 = (Button) findViewById(R.id.boton4);
@@ -31,7 +33,7 @@ public class Finobacci extends AppCompatActivity implements View.OnClickListener
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Devolver = new Intent(Finobacci.this, MainActivity.class);
+                Intent Devolver = new Intent(resta.this, MainActivity.class);
                 startActivity(Devolver);
             }
         });
@@ -40,21 +42,12 @@ public class Finobacci extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-        int n1, n2, n3, n4, resultado;
-        n1 = Integer.parseInt(tex1.getText().toString());
-        n2 = 0;
-        n3 = 1;
-        for (int i = 0; i < n1; i++) {
-            /*System.out.println(n2);*/
-            n4 = n2 + n3;
-            n2 = n3;
-            n3 = n4;
 
+        int n1, n2, resultado;
+        n1 = Integer.parseInt((tex1.getText().toString()));
+        n2 = Integer.parseInt((text2.getText().toString()));
+        resultado = n1 - n2;
+        tv2.setText(String.valueOf(resultado));
 
-            tv2.setText(String.valueOf(n2));
-        }
     }
-
-
-
     }
